@@ -10,6 +10,21 @@ class Person {
     }
 }
 
-const john = new Person("Tharindu Dissa", 18);
+class Customer extends Person {
+    customerId: number;
+    constructor(name: string, age: number, customerId: number) {
+        super(name, age);
+        this.customerId = customerId;
+    }
+    describe(): string {
+        return `${super.describe()} Customer ID: ${this.customerId}.`;
+    }
+}
 
-console.log(john.describe());
+
+const tharindu = new Person("Tharindu Dissa", 18);
+const tharinduCustomer = new Customer("Tharindu Dissa", 18, 2323);
+
+
+console.log(tharindu.describe());
+console.log(tharinduCustomer.describe());
