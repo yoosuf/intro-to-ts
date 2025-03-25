@@ -35,12 +35,44 @@ class Administrator extends Person {
     }
 }
 
+
+
+
+
+
+interface Identifiable {
+    id: number;
+    getId(): number;
+}
+
+
+class PremiumCustomer extends Customer implements Identifiable {
+    id: number;
+    constructor(name: string, age: number, customerId: number, id: number) {
+        super(name, age, customerId);
+        this.id = id;
+    }
+    getId(): number {
+        return this.id;
+    }
+}
+
+
 const tharindu = new Person("Tharindu Dissa", 18);
 const supun = new Customer("Supun", 18, 2323);
 const chandana = new Administrator("Chandana", 40, "Manager");
 
+const premiumCustomer = new PremiumCustomer("Tharindu", 18, 2323, 1);
 
 
 console.log(tharindu.describe());
+console.log("####################################");
 console.log(supun.describe());
+console.log("####################################");
 console.log(chandana.describe());
+
+console.log("####################################");
+console.log("Premium Customer");
+console.log(premiumCustomer.describe());
+console.log(premiumCustomer.getId());
+
