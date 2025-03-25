@@ -1,3 +1,6 @@
-let personName: string = "John";
-let age: number = 25;
-let isActive: boolean = true;
+// Run: deno run src/main.ts
+function greet(name: string): string {
+    return `Hello, ${name}!`;
+}
+// Output: Hello, Alice!
+console.log(greet("Alice"));
